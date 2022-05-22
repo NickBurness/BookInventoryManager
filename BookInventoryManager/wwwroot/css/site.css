@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 10px;
+}
+
+main a {
+    margin-bottom: 10px;
+}
+
+header nav {
+    display: block;
+    width: 100%;
+    background-color: grey;
+}
+
+header nav div div ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    text-align: center;
+}
+
+header nav div div ul li a {
+    margin: 5px;
+}
+
+td div {
+    min-width: 100px;  
+    max-width: 600px;
+}
+
+.row div label {
+    margin-bottom: 5px;
+}
+
+.input {
+    margin-bottom: 10px;
+}
+
+dl dd {
+    margin-left: 0px;
+}

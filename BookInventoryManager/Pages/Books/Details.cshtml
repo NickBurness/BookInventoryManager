@@ -1,0 +1,58 @@
+﻿@page
+@model BookInventoryManager.Pages.Books.DetailsModel
+
+@{
+    ViewData["Title"] = "Book Details";
+}
+
+<div>
+    <a class="button secondary" asp-page="./Index">Back to List</a>
+</div>
+
+<h1>Book Details</h1>
+
+<div>
+
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.AuthorID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.AuthorID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.CategoryID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.CategoryID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.Quantity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.Quantity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.Edition)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.Edition)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="button primary" asp-page="./Edit" asp-route-id="@Model.Book?.ID">Edit</a>
+</div>

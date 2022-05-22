@@ -1,0 +1,29 @@
+﻿@page
+@model BookInventoryManager.Pages.Categories.DetailsModel
+
+@{
+    ViewData["Title"] = "Category Details";
+}
+
+<div>
+    <a class="button secondary" asp-page="./Index">Back to List</a>
+</div>
+
+<h1>Category Details</h1>
+
+<div>
+    <h4>Category</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a class="button primary" asp-page="./Edit" asp-route-id="@Model.Category?.ID">Edit</a>
+</div>

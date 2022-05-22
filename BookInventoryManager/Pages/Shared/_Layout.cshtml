@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Library Book Inventory Manager</title>
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <a class="button info" asp-area="" asp-page="/Index">Library Book Inventory Manager</a>
+                <div>
+                    <ul>                        
+                        <li>
+                            <a class="button dark" asp-area="" asp-page="/Books/Index">Books</a>
+                        </li>
+                        <li>
+                            <a class="button dark" asp-area="" asp-page="/Authors/Index">Authors</a>
+                        </li>
+                        <li>
+                            <a class="button dark" asp-area="" asp-page="/Categories/Index">Categories</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+</body>
+</html>

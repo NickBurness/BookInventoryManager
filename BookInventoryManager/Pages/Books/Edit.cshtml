@@ -1,0 +1,65 @@
+﻿@page
+@model BookInventoryManager.Pages.Books.EditModel
+
+@{
+    ViewData["Title"] = "Edit Book";
+}
+
+<div>
+    <a class="button secondary" asp-page="./Index">Back to List</a>
+</div>
+
+<h1>Edit Book</h1>
+<hr />
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <input type="hidden" asp-for="Book.ID" />
+
+    <div>
+        <label asp-for="Book.AuthorID"></label>
+        <input asp-for="Book.AuthorID" data-role="input" />
+        <span asp-validation-for="Book.AuthorID"></span>
+    </div>
+
+    <div>
+        <label asp-for="Book.CategoryID"></label>
+        <input asp-for="Book.CategoryID" data-role="input" />
+        <span asp-validation-for="Book.CategoryID"></span>
+    </div>
+
+    <div>
+        <label asp-for="Book.Title"></label>
+        <input asp-for="Book.Title" data-role="input" />
+        <span asp-validation-for="Book.Title"></span>
+    </div>
+
+    <div>
+        <label asp-for="Book.Description"></label>
+        <textarea asp-for="Book.Description" data-role="textarea"></textarea>
+        <span asp-validation-for="Book.Description"></span>
+    </div>
+
+    <div>
+        <label asp-for="Book.Quantity"></label>
+        <input asp-for="Book.Quantity" data-role="input" />
+        <span asp-validation-for="Book.Quantity"></span>
+    </div>
+
+    <div>
+        <label asp-for="Book.Edition"></label>
+        <input asp-for="Book.Edition" data-role="input" />
+        <span asp-validation-for="Book.Edition"></span>
+    </div>
+
+    <div>
+        <input class="button primary" type="submit" value="Save" />
+    </div>
+</form>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}
