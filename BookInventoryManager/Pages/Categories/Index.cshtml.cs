@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BookInventoryManager.Data;
 using BookInventoryManager.Models;
@@ -12,9 +7,9 @@ namespace BookInventoryManager.Pages.Categories
 {
     public class IndexModel : PageModel
     {
-        private readonly BookInventoryManager.Data.BookManagerContext _context;
+        private readonly BookManagerContext _context;
 
-        public IndexModel(BookInventoryManager.Data.BookManagerContext context)
+        public IndexModel(BookManagerContext context)
         {
             _context = context;
         }

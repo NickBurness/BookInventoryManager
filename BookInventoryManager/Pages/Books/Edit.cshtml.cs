@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookInventoryManager.Data;
 using BookInventoryManager.Models;
@@ -13,9 +8,9 @@ namespace BookInventoryManager.Pages.Books
 {
     public class EditModel : PageModel
     {
-        private readonly BookInventoryManager.Data.BookManagerContext _context;
+        private readonly BookManagerContext _context;
 
-        public EditModel(BookInventoryManager.Data.BookManagerContext context)
+        public EditModel(BookManagerContext context)
         {
             _context = context;
         }

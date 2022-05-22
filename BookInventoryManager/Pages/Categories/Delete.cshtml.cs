@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BookInventoryManager.Data;
@@ -12,9 +8,9 @@ namespace BookInventoryManager.Pages.Categories
 {
     public class DeleteModel : PageModel
     {
-        private readonly BookInventoryManager.Data.BookManagerContext _context;
+        private readonly BookManagerContext _context;
 
-        public DeleteModel(BookInventoryManager.Data.BookManagerContext context)
+        public DeleteModel(BookManagerContext context)
         {
             _context = context;
         }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BookInventoryManager.Data;
@@ -12,9 +8,9 @@ namespace BookInventoryManager.Pages.Authors
 {
     public class DetailsModel : PageModel
     {
-        private readonly BookInventoryManager.Data.BookManagerContext _context;
+        private readonly BookManagerContext _context;
 
-        public DetailsModel(BookInventoryManager.Data.BookManagerContext context)
+        public DetailsModel(BookManagerContext context)
         {
             _context = context;
         }
