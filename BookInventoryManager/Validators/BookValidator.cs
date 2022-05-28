@@ -37,10 +37,12 @@ namespace BookInventoryManager.Validators
 
             RuleFor(x => x.AuthorID)
                 .NotEmpty().WithMessage("{PropertyName} should not be empty")
+                .NotNull().WithMessage("{PropertyName} should not be empty")
                 .Must(BeAValidAuthor).WithMessage("{PropertyName} does not yet exist");
 
             RuleFor(x => x.CategoryID)
                 .NotEmpty().WithMessage("{PropertyName} should not be empty")
+                .NotNull().WithMessage("{PropertyName} should not be empty")
                 .Must(BeAValidCategory).WithMessage("{PropertyName} does not yet exist");
         }
 
