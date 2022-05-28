@@ -19,8 +19,8 @@
 
     <div>
         <label asp-for="Category.Name"></label>
+        <div><span class="text-danger" asp-validation-for="Category.Name"></span></div>
         <input asp-for="Category.Name" data-role="input" />
-        <span asp-validation-for="Category.Name"></span>
     </div>
 
     <div>
