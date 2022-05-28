@@ -16,6 +16,7 @@ ValidatorOptions.Global.DefaultRuleLevelCascadeMode = CascadeMode.Stop;
 
 // fluent validators
 builder.Services.AddTransient<IValidator<Book>, BookValidator>();
+builder.Services.AddTransient<IValidator<Author>, AuthorValidator>();
 
 builder.Services.AddDbContext<BookManagerContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("BookManagerContext") ?? throw new InvalidOperationException("Connection string 'BookManagerContext' not found.")));

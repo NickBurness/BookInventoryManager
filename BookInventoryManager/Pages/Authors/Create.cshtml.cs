@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using BookInventoryManager.Data;
 using BookInventoryManager.Models;
+using BookInventoryManager.Validators;
+using FluentValidation.AspNetCore;
 
 namespace BookInventoryManager.Pages.Authors
 {
@@ -26,8 +28,17 @@ namespace BookInventoryManager.Pages.Authors
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid)
+            var validator = new AuthorValidator();
+            var validationResults = validator.Validate(Author);
+
+            validationResults.AddToModelState(ModelState, "Author");
+
+            if (!validationResults.IsValid)
             {
+                foreach (var error in validationResults.Errors)
+                {
+                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                }
                 return Page();
             }
 

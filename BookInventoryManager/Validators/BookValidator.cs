@@ -10,7 +10,8 @@ namespace BookInventoryManager.Validators
         private int maxQuantity = 10000;
 
         private int minLength = 1;
-        private int MaxLength = 100;
+        private int maxTitleLength = 100;
+        private int maxDescriptionLength = 1000;
 
         private readonly BookManagerContext _context;
 
@@ -19,11 +20,11 @@ namespace BookInventoryManager.Validators
         {
             RuleFor(x => x.Title)
                 .NotEmpty().WithMessage("{PropertyName} should not be empty")
-                .Length(minLength, MaxLength).WithMessage("{PropertyName} contains too many characters");
+                .Length(minLength, maxTitleLength).WithMessage("{PropertyName} contains too many characters");
 
             RuleFor(x => x.Description)
                 .NotEmpty().WithMessage("{PropertyName} should not be empty")
-                .Length(minLength, MaxLength).WithMessage("{PropertyName} contains too many characters");
+                .Length(minLength, maxDescriptionLength).WithMessage("{PropertyName} contains too many characters");
 
             RuleFor(x => x.Quantity)
                 .NotEmpty().WithMessage("{PropertyName} should not be empty")

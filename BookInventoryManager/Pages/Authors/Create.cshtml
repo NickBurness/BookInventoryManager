@@ -17,14 +17,16 @@
     <div asp-validation-summary="ModelOnly"></div>
     <div>
         <label asp-for="Author.FirstName"></label>
+        <div><span class="text-danger" asp-validation-for="Author.FirstName"></span></div>
         <input asp-for="Author.FirstName" data-role="input" />
-        <span asp-validation-for="Author.FirstName"></span>
     </div>
+
     <div>
         <label asp-for="Author.Surname"></label>
+        <div><span class="text-danger" asp-validation-for="Author.Surname"></span></div>
         <input asp-for="Author.Surname" data-role="input" />
-        <span asp-validation-for="Author.Surname"></span>
     </div>
+
     <div>
         <input type="submit" value="Create" />
     </div>
