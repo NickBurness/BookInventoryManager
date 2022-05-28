@@ -44,3 +44,8 @@ td div {
 dl dd {
     margin-left: 0px;
 }
+
+.text-danger
+{
+    color: red;
+}

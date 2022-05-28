@@ -1,11 +1,22 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using BookInventoryManager.Data;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using BookInventoryManager.Models;
+using BookInventoryManager.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages().AddFluentValidation();
+
+// fluent validation rules
+ValidatorOptions.Global.DefaultClassLevelCascadeMode = CascadeMode.Continue;
+ValidatorOptions.Global.DefaultRuleLevelCascadeMode = CascadeMode.Stop;
+
+// fluent validators
+builder.Services.AddTransient<IValidator<Book>, BookValidator>();
+
 builder.Services.AddDbContext<BookManagerContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("BookManagerContext") ?? throw new InvalidOperationException("Connection string 'BookManagerContext' not found.")));
 
@@ -41,4 +52,6 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
 app.MapRazorPages();
+
+
 app.Run();

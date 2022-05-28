@@ -15,36 +15,43 @@
 
 <form method="post">
     <div asp-validation-summary="ModelOnly"></div>
+
     <div class="form-group">
         <label asp-for="Book.AuthorID"></label>
+        <div><span class="text-danger" asp-validation-for="Book.AuthorID"></span></div>
         <input asp-for="Book.AuthorID" data-role="input" />
-        <span asp-validation-for="Book.AuthorID"></span>
     </div>
+
     <div class="form-group">
         <label asp-for="Book.CategoryID"></label>
+        <div><span class="text-danger" asp-validation-for="Book.CategoryID"></span></div>
         <input asp-for="Book.CategoryID" data-role="input" />
-        <span asp-validation-for="Book.CategoryID"></span>
     </div>
+
     <div class="form-group">
         <label asp-for="Book.Title"></label>
+        <div><span class="text-danger" asp-validation-for="Book.Title" class="text-danger"></span></div>
         <input asp-for="Book.Title" data-role="input" />
-        <span asp-validation-for="Book.Title" class="text-danger"></span>
     </div>
+
     <div class="form-group">
         <label asp-for="Book.Description"></label>
+        <div><span class="text-danger" asp-validation-for="Book.Description"></span></div>
         <textarea class="text-area" asp-for="Book.Description" data-role="textarea"></textarea>
-        <span asp-validation-for="Book.Description"></span>
     </div>
+
     <div class="form-group">
         <label asp-for="Book.Quantity"></label>
+        <div><span class="text-danger" asp-validation-for="Book.Quantity"></span></div>
         <input asp-for="Book.Quantity" data-role="input" />
-        <span asp-validation-for="Book.Quantity"></span>
     </div>
+
     <div class="form-group">
         <label asp-for="Book.Edition"></label>
+        <div><span class="text-danger" asp-validation-for="Book.Edition"></span></div>
         <input asp-for="Book.Edition" data-role="input" />
-        <span asp-validation-for="Book.Edition"></span>
     </div>
+
     <div class="form-group">
         <input class="button primary" type="submit" value="Create" />
     </div>
