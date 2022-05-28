@@ -40,7 +40,7 @@ namespace BookInventoryManager.Pages.Books
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            var validator = new BookValidator();
+            var validator = new BookValidator(_context);
             var validationResults = validator.Validate(Book);
             validationResults.AddToModelState(ModelState, "Book");
 

@@ -16,8 +16,10 @@ namespace BookInventoryManager.Validators
         private readonly BookManagerContext _context;
 
 
-        public BookValidator()
+        public BookValidator(BookManagerContext context)
         {
+            _context = context;
+
             RuleFor(x => x.Title)
                 .NotEmpty().WithMessage("{PropertyName} should not be empty")
                 .Length(minLength, maxTitleLength).WithMessage("{PropertyName} contains too many characters");

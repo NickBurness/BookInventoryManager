@@ -29,8 +29,8 @@ header nav div div ul li a {
 }
 
 td div {
-    min-width: 100px;  
-    max-width: 600px;
+    min-width: 50px;  
+    max-width: 500px;
 }
 
 .row div label {
