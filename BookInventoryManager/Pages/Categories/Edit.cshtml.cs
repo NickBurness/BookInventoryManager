@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BookInventoryManager.Data;
 using BookInventoryManager.Models;
+using BookInventoryManager.Validators;
+using FluentValidation.AspNetCore;
 
 namespace BookInventoryManager.Pages.Categories
 {
@@ -38,8 +40,17 @@ namespace BookInventoryManager.Pages.Categories
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+            var validator = new CategoryValidator();
+            var validationResults = validator.Validate(Category);
+
+            validationResults.AddToModelState(ModelState, "Book");
+
+            if (!validationResults.IsValid)
             {
+                foreach (var error in validationResults.Errors)
+                {
+                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                }
                 return Page();
             }
 
